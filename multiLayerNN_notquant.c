@@ -359,7 +359,7 @@ void error_usage() {
 int main(int argc, char *argv[])
 {
     char *file_name = "saved_model.NN";
-    int n=1;//number of hidden layers, might be able to set up a file format where even this is read, future work ...
+    int n=7;//number of hidden layers, might be able to set up a file format where even this is read, future work ...
     NN model_1;
     data dataset_1;
     long start,curr,last;
@@ -384,7 +384,7 @@ int main(int argc, char *argv[])
     start=time_in_ms();
     last=start;
     for(int epoch=0;epoch<num_epochs;epoch++)
-    {
+    {//instead of dix=stributing on all cpur
         model_1.num_correct_predictions=0;
         for (int i = 1; i <=num_train_images; i++)
         {
